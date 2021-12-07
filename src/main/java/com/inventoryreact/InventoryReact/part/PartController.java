@@ -18,32 +18,32 @@ public class PartController {
     }
 
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app:80")
     public List<Part> getParts() {
         return partService.getParts();
     }
 
     @GetMapping(path = "{partId}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app:80")
     public Optional<Part> find(@PathVariable("partId") Long partId) {
         return partService.getPartById(partId);
     }
 
     @PostMapping
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app:80")
     public void addNewPart(@RequestBody Part part){
         partService.addPart(part);
     }
 
     @DeleteMapping(path = "{partId}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app:80")
     public void deletePart(
             @PathVariable("partId") Long partId) {
         partService.deletePart(partId);
     }
 
     @PutMapping(path = "{partId}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app:80")
     public void updatePart (
             @PathVariable("partId") Long partId,
             @RequestParam(required = false) String partName,
