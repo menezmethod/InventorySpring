@@ -19,32 +19,32 @@ public class ProductController {
     }
 
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app/")
     public List<Product> getProducts() {
         return productService.getProducts();
     }
 
     @GetMapping(path = "{productId}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app/")
     public Optional<Product> find(@PathVariable("productId") Long productId) {
         return productService.getProductById(productId);
     }
 
     @PostMapping
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app/")
     public void addNewProduct(@RequestBody Product product){
         productService.addProduct(product);
     }
 
     @DeleteMapping(path = "{productId}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app/")
     public void deleteProduct(
             @PathVariable("productId") Long productId) {
         productService.deleteProduct(productId);
     }
 
     @PutMapping(path = "{productId}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://inventoryreact.netlify.app/")
     public void updateProduct (
             @PathVariable("productId") Long productId,
             @RequestParam(required = false) String productName,
